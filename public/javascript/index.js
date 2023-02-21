@@ -6,9 +6,9 @@ window.addEventListener('load', () => {
     charactersAPI.getFullList().then((allCharacters) => {
       const parentDiv = document.querySelector(".characters-container")
       const hiddenDivOnFetch = document.getElementsByClassName("character-info")
-      //this function goes through the array of data then creates the information"
-   console.log(all)
-      allCharacters.forEach((element) => {
+      parentDiv.innerHTML= "";
+      
+      allCharacters.data.forEach((element) => {
         console.log(element.name)
         const singleCharacter = document.createElement("div")
         singleCharacter.className = "character-info";
@@ -46,35 +46,20 @@ window.addEventListener('load', () => {
         parentDiv.appendChild(singleCharacter)
 
       });
-      hiddenDivOnFetch[0].style.display = "none"
+      hiddenDivOnFetch.style.display = "none"
 
     })
   })
-  //       const parentDiv = document.querySelector(".characters.container")
-  //     const hiddenDivOnFetch = document.getElementById(
-  //       "character-info-to-hide"
-  //     )
 
-  //     allCharacters.forEach((element) => {
-  //       const singleCharacter = document.createElement("div")
-  //       singleCharacter.className = "character-info";
+ document.getElementById('fetch-one').addEventListener('click', function () {
+const input = document.querySelector("operation.input").value
+charactersAPI.getOneRegister(characterId)
+.then(response => {
+  if (characterId )
+})
 
-  //       const nuevoDivName = document.createElement("div")
-  //       nuevoDivName.classList = "name"
-  //       nuevoDivName.innerHTML = `Name: ${character.name}`
-  //       singleCharacter.appendChild(nuevoDivName)
-
-  //       parentDiv.appendChild(singleCharacter)
-
-  //     });
-  //     hiddenDivOnFetch.style.display = "none"
 
 });
-
-// document.getElementById('fetch-one').addEventListener('click', function () {
-
-
-// });
 
 // document.getElementById('deconste-one').addEventListener('click', function (event) {
 
